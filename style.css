@@ -7,8 +7,29 @@ body {
   align-items: center;
   overflow: hidden;
   font-family: 'Segoe UI', sans-serif;
+  position: relative;
 }
 
+/* LUCES DE FONDO */
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(255,182,193,0.2), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(255,105,180,0.2), transparent 40%);
+  animation: mover 20s linear infinite;
+}
+
+@keyframes mover {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-10%, -10%); }
+  100% { transform: translate(0,0); }
+}
+
+/* CAJA CENTRAL */
 .container {
   text-align: center;
   background: rgba(255,255,255,0.25);
@@ -16,6 +37,8 @@ body {
   border-radius: 20px;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 40px rgba(255,0,100,0.3);
+  z-index: 2;
+  width: 350px;
 }
 
 #nombre {
@@ -36,10 +59,24 @@ body {
   color: #5a1a2f;
 }
 
+/* CONTADOR */
+#contador {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: #6b1d3a;
+}
+
+/* BOTONES */
+.botones {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
 button {
   background: #ff3366;
   border: none;
-  padding: 15px 25px;
+  padding: 12px 20px;
   font-size: 1em;
   color: white;
   border-radius: 30px;
@@ -51,3 +88,35 @@ button:hover {
   background: #ff668f;
 }
 
+/* CARTA */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.carta {
+  background: #fffafc;
+  padding: 30px;
+  width: 320px;
+  border-radius: 15px;
+  text-align: center;
+  animation: aparecer 0.6s ease;
+  box-shadow: 0 0 40px rgba(255,0,100,0.4);
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.oculto {
+  display: none;
+}
