@@ -1,4 +1,4 @@
-/* TEXTO QUE SE ESCRIBE */
+/* TEXTO ANIMADO */
 const textos = [
   "Hola Daniela 💖",
   "Hice este lugar solo para ti",
@@ -37,16 +37,15 @@ function actualizarContador() {
   const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const minutos = Math.floor((diff / (1000 * 60)) % 60);
 
-  document.getElementById("contador").innerHTML =
+  document.getElementById("contador").innerText =
     `⏳ ${dias} días, ${horas} horas y ${minutos} minutos contigo 💞`;
 }
 setInterval(actualizarContador, 1000);
 actualizarContador();
 
-/* CARTAS CON CONTRASEÑA */
+/* CARTAS CON CONTRASEÑA DIFERENTE */
 function abrirCarta(num) {
-  let passCorrecta;
-  let texto;
+  let passCorrecta, texto;
 
   if (num === 1) {
     passCorrecta = "200725";
@@ -57,7 +56,6 @@ function abrirCarta(num) {
   }
 
   const pass = prompt("Contraseña 💗");
-
   if (pass !== passCorrecta) {
     alert("Esa no es 🥺");
     return;
@@ -67,99 +65,23 @@ function abrirCarta(num) {
   document.getElementById("overlay").classList.remove("oculto");
 }
 
-
-/* CORAZONES */
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.innerHTML = "❤️";
-  heart.style.position = "absolute";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.bottom = "0";
-  heart.style.fontSize = Math.random() * 30 + 20 + "px";
-  heart.style.animation = "subir 4s linear";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 4000);
-}, 300);
-
-/* ESTRELLAS */
-setInterval(() => {
-  const star = document.createElement("div");
-  star.innerHTML = "✨";
-  star.style.position = "absolute";
-  star.style.left = Math.random() * 100 + "vw";
-  star.style.top = Math.random() * 100 + "vh";
-  document.body.appendChild(star);
-  setTimeout(() => star.remove(), 2000);
-}, 800);
-
-// ===== CARTAS CON CONTRASEÑA =====
-function abrirCarta(num) {
-  const pass = prompt("Contraseña 💗");
-  if (pass !== "daniela") {
-    alert("Esa no es 🥺");
-    return;
-  }
-
-  const texto =
-    num === 1
-      ? "Daniela, incluso cuando el mundo se pone silencioso, mi corazón te sigue eligiendo. Gracias por ser mi calma, mi refugio y mi razón."
-      : "Si algún día dudas de lo nuestro, vuelve aquí. Hay un amor que te piensa, te cuida y te elige sin condiciones.";
-
-  document.getElementById("textoCarta").innerText = texto;
-  document.getElementById("overlay").classList.remove("oculto");
-}
-
-
 function cerrarCarta() {
   document.getElementById("overlay").classList.add("oculto");
 }
 
-// ===== CONTADOR DESDE 20 JULIO 2025 =====
-function actualizarContador() {
-  const inicio = new Date("2025-07-20T00:00:00");
-  const ahora = new Date();
-  const diff = ahora - inicio;
-
-  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutos = Math.floor((diff / (1000 * 60)) % 60);
-
-  document.getElementById("contador").innerText =
-    `⏳ ${dias} días, ${horas} horas y ${minutos} minutos contigo 💞`;
-}
-
-setInterval(actualizarContador, 1000);
-actualizarContador();
-
-
-
-// ===== FLORES AL ENTRAR =====
+/* FLORES */
 function crearFlor() {
   const flores = ["🌸", "🌷", "🌹", "🌼"];
   const flor = document.createElement("div");
   flor.innerText = flores[Math.floor(Math.random() * flores.length)];
-
   flor.style.position = "absolute";
-  flor.style.fontSize = "28px";
-  flor.style.opacity = "0";
-  flor.style.transition = "all 3s ease";
-
-  // izquierda o derecha de la caja
-  const lado = Math.random() < 0.5 ? "left" : "right";
-  flor.style[lado] = "5%";
-  flor.style.top = Math.random() * 80 + 10 + "%";
-
+  flor.style.fontSize = "26px";
+  flor.style.left = Math.random() < 0.5 ? "5%" : "90%";
+  flor.style.top = Math.random() * 80 + "%";
   document.body.appendChild(flor);
-
-  setTimeout(() => {
-    flor.style.opacity = "1";
-    flor.style.transform = "translateY(-20px)";
-  }, 100);
-
-  setTimeout(() => flor.remove(), 6000);
+  setTimeout(() => flor.remove(), 5000);
 }
 
-// generar varias apenas entra
 for (let i = 0; i < 6; i++) {
   setTimeout(crearFlor, i * 400);
 }
