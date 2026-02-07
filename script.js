@@ -86,3 +86,25 @@ setInterval(() => {
   document.body.appendChild(star);
   setTimeout(() => star.remove(), 2000);
 }, 800);
+
+// ===== CARTAS CON CONTRASEÑA =====
+function abrirCarta(num) {
+  const pass = prompt("Contraseña 💗");
+  if (pass !== "daniela") {
+    alert("Esa no es 🥺");
+    return;
+  }
+
+  const texto =
+    num === 1
+      ? "Daniela, incluso cuando el mundo se pone silencioso, mi corazón te sigue eligiendo. Gracias por ser mi calma, mi refugio y mi razón."
+      : "Si algún día dudas de lo nuestro, vuelve aquí. Hay un amor que te piensa, te cuida y te elige sin condiciones.";
+
+  document.getElementById("textoCarta").innerText = texto;
+  document.getElementById("overlay").classList.remove("oculto");
+}
+
+function cerrarCarta() {
+  document.getElementById("overlay").classList.add("oculto");
+}
+
