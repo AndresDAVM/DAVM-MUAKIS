@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,14 +5,41 @@
   <title>Para Daniela 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="hearts"></div>
-
+  <!-- CONTENEDOR PRINCIPAL -->
   <div class="container">
+
     <h1 id="nombre">Daniela</h1>
+
     <p id="mensaje"></p>
-    <button onclick="sorpresa()">Haz clic aquí 💝</button>
+
+    <!-- CONTADOR -->
+    <div id="contador"></div>
+
+    <!-- BOTONES -->
+    <div class="botones">
+      <button onclick="abrirCarta(1)">Carta 1 💌</button>
+      <button onclick="abrirCarta(2)">Carta 2 💖</button>
+    </div>
+
+    <!-- MÚSICA -->
+    <iframe style="border-radius:12px; margin-top:20px;"
+      src="https://open.spotify.com/embed/track/4TtZz2Yz5eZCjY2b5jGf5E"
+      width="100%" height="80"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+
+  </div>
+
+  <!-- CARTA (OCULTA) -->
+  <div id="overlay" class="oculto">
+    <div class="carta">
+      <p id="textoCarta"></p>
+      <button onclick="cerrarCarta()">Cerrar</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
