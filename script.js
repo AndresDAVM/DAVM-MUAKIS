@@ -125,3 +125,36 @@ function actualizarContador() {
 
 setInterval(actualizarContador, 1000);
 actualizarContador();
+
+
+
+// ===== FLORES AL ENTRAR =====
+function crearFlor() {
+  const flores = ["🌸", "🌷", "🌹", "🌼"];
+  const flor = document.createElement("div");
+  flor.innerText = flores[Math.floor(Math.random() * flores.length)];
+
+  flor.style.position = "absolute";
+  flor.style.fontSize = "28px";
+  flor.style.opacity = "0";
+  flor.style.transition = "all 3s ease";
+
+  // izquierda o derecha de la caja
+  const lado = Math.random() < 0.5 ? "left" : "right";
+  flor.style[lado] = "5%";
+  flor.style.top = Math.random() * 80 + 10 + "%";
+
+  document.body.appendChild(flor);
+
+  setTimeout(() => {
+    flor.style.opacity = "1";
+    flor.style.transform = "translateY(-20px)";
+  }, 100);
+
+  setTimeout(() => flor.remove(), 6000);
+}
+
+// generar varias apenas entra
+for (let i = 0; i < 6; i++) {
+  setTimeout(crearFlor, i * 400);
+}
