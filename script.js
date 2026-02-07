@@ -31,3 +31,17 @@ function sorpresa() {
   alert("Daniela, eres mi persona favorita en este universo 💫💖");
 }
 
+
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.innerHTML = "❤️";
+  heart.style.position = "absolute";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.bottom = "0";
+  heart.style.fontSize = Math.random() * 30 + 20 + "px";
+  heart.style.animation = "subir 4s linear";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 4000);
+}, 300);
+
