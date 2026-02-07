@@ -166,3 +166,29 @@ button:hover {
   }
 }
 
+
+
+
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  #nombre {
+    font-size: 3em;
+  }
+
+  #mensaje {
+    font-size: 1.1em;
+  }
+
+  button {
+    padding: 10px 16px;
+    font-size: 0.9em;
+  }
+
+  .carta {
+    width: 90%;
+  }
+}
