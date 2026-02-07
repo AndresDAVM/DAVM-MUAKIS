@@ -1,9 +1,9 @@
 /* TEXTO ANIMADO */
 const textos = [
-  "Hola Daniela 💖",
+  "Hola Mi Niña 💖",
   "Hice este lugar solo para ti",
   "Porque lo nuestro merece algo eterno",
-  "Eres calma, hogar y amor",
+  "Eres calma, hogar y amor, y todo para mi",
   "Siempre tú ❤️"
 ];
 
@@ -38,7 +38,7 @@ function actualizarContador() {
   const minutos = Math.floor((diff / (1000 * 60)) % 60);
 
   document.getElementById("contador").innerText =
-    `⏳ ${dias} días, ${horas} horas y ${minutos} minutos contigo 💞`;
+    `⏳ ${dias} días, ${horas} horas y ${minutos} minutos a tu ladito miamoshito 💞`;
 }
 setInterval(actualizarContador, 1000);
 actualizarContador();
