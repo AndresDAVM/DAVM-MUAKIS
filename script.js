@@ -78,6 +78,7 @@ function crearFlor() {
   flor.style.fontSize = "26px";
   flor.style.left = Math.random() < 0.5 ? "5%" : "90%";
   flor.style.top = Math.random() * 80 + "%";
+  flor.style.animation = "flotar 2s ease";
   document.body.appendChild(flor);
   setTimeout(() => flor.remove(), 5000);
 }
