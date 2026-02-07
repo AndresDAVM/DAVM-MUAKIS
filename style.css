@@ -120,3 +120,35 @@ button:hover {
 .oculto {
   display: none !important;
 }
+
+
+
+/* ===== AJUSTES PARA CELULAR ===== */
+@media (max-width: 600px) {
+
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  #nombre {
+    font-size: 2.8em;
+  }
+
+  #mensaje {
+    font-size: 1.1em;
+  }
+
+  .botones {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .carta {
+    width: 90%;
+  }
+}
