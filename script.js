@@ -46,7 +46,7 @@ actualizarContador();
 /* CARTAS CON CONTRASEÑA */
 function abrirCarta(num) {
   const pass = prompt("Contraseña 💗");
-  if (pass !== "daniela") {
+  if (pass !== "200725") {
     alert("Esa no es 🥺");
     return;
   }
