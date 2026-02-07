@@ -104,7 +104,24 @@ function abrirCarta(num) {
   document.getElementById("overlay").classList.remove("oculto");
 }
 
+
 function cerrarCarta() {
   document.getElementById("overlay").classList.add("oculto");
 }
 
+// ===== CONTADOR DESDE 20 JULIO 2025 =====
+function actualizarContador() {
+  const inicio = new Date("2025-07-20T00:00:00");
+  const ahora = new Date();
+  const diff = ahora - inicio;
+
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diff / (1000 * 60)) % 60);
+
+  document.getElementById("contador").innerText =
+    `⏳ ${dias} días, ${horas} horas y ${minutos} minutos contigo 💞`;
+}
+
+setInterval(actualizarContador, 1000);
+actualizarContador();
