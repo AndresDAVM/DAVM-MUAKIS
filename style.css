@@ -118,5 +118,5 @@ button:hover {
 }
 
 .oculto {
-  display: none;
+  display: none !important;
 }
