@@ -45,23 +45,28 @@ actualizarContador();
 
 /* CARTAS CON CONTRASEÑA */
 function abrirCarta(num) {
+  let passCorrecta;
+  let texto;
+
+  if (num === 1) {
+    passCorrecta = "200725";
+    texto = "Daniela, incluso cuando el mundo se pone lento, mi corazón te elige sin dudar. Gracias por existir tan bonito.";
+  } else {
+    passCorrecta = "A+D";
+    texto = "Esta carta guarda un amor que no se rinde, que aprende y que te elige incluso en silencio.";
+  }
+
   const pass = prompt("Contraseña 💗");
-  if (pass !== "200725") {
+
+  if (pass !== passCorrecta) {
     alert("Esa no es 🥺");
     return;
   }
-
-  const texto = num === 1
-    ? "Daniela, incluso en los días silenciosos mi corazón te elige. Gracias por existir y por ser mi lugar seguro."
-    : "Si alguna vez dudas, vuelve aquí. Siempre habrá alguien que te ame con todo lo que es.";
 
   document.getElementById("textoCarta").innerText = texto;
   document.getElementById("overlay").classList.remove("oculto");
 }
 
-function cerrarCarta() {
-  document.getElementById("overlay").classList.add("oculto");
-}
 
 /* CORAZONES */
 setInterval(() => {
