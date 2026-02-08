@@ -49,10 +49,10 @@ function abrirCarta(num) {
 
   if (num === 1) {
     passCorrecta = "200725";
-    texto = "Daniela, incluso cuando el mundo se pone lento, mi corazón te elige sin dudar. Gracias por existir tan bonito.";
+    texto = "Mi niña, incluso cuando el mundo se pone lento y en nuestra, mi corazón te elige sin dudar. Gracias por seguir a mi ladito.";
   } else {
     passCorrecta = "A+D";
-    texto = "Esta carta guarda un amor que no se rinde, que aprende y que te elige incluso en silencio.";
+    texto = "Este mensajito guarda un amor que no se rinde, que aprende y que te elige incluso en silencio, incluso en los errores y problemas. Te amo.";
   }
 
   const pass = prompt("Contraseña 💗");
