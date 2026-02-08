@@ -87,3 +87,15 @@ for (let i = 0; i < 6; i++) {
   setTimeout(crearFlor, i * 400);
 }
 
+/* CORAZONES SUBIENDO */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.innerText = "❤️";
+  heart.style.position = "absolute";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.bottom = "-20px";
+  heart.style.fontSize = Math.random() * 20 + 20 + "px";
+  heart.style.animation = "subir 4s linear";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 4000);
+}, 400);
