@@ -87,16 +87,3 @@ for (let i = 0; i < 6; i++) {
   setTimeout(crearFlor, i * 400);
 }
 
-
-
-/* ===== ANIMACIÓN CORAZONES ===== */
-@keyframes subir {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
-}
